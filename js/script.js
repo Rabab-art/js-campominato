@@ -27,7 +27,7 @@ var randNumber = 0;
 
 while (list.length < 16) {
 
-  var randNumber = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+  var randNumber = Math.floor(Math.random() * (100) + 1);
   if (!list.includes(randNumber)) {
     list.push(randNumber);
   }
@@ -35,3 +35,19 @@ while (list.length < 16) {
 
 console.log(randNumber);
 console.log(list);
+
+// 1.CHIEDO ALL'UTENTE PER 16 VOLTE DI INSERIRMI UN NUMERO DA 1 A 100;
+// 2.I NUMERI INSERITI NON DEVONO ESSERE DOPPIONI;
+
+var listNum = [''];
+var randRequest = 0;
+
+while (listNum.length < 16) {
+
+  var randRequest = parseInt(prompt('Inserisci un numero da 1 a 100'));
+  if (!listNum.includes(randRequest)) {
+    listNum.push(randRequest);
+  }
+};
+console.log(listNum);
+console.log(randRequest);
