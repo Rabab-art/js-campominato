@@ -21,13 +21,14 @@
 
 
 
-var list = [''];
+var list = [];
 
 var randNumber = 0;
+var numberChose = 16;
 
-while (list.length < 16) {
+while (list.length < numberChose) {
 
-  var randNumber = Math.floor(Math.random() * (100) + 1);
+  var randNumber = Math.floor(Math.random() * (100 - 1 + 1) + 1);
   if (!list.includes(randNumber)) {
     list.push(randNumber);
   }
@@ -39,15 +40,27 @@ console.log(list);
 // 1.CHIEDO ALL'UTENTE PER 16 VOLTE DI INSERIRMI UN NUMERO DA 1 A 100;
 // 2.I NUMERI INSERITI NON DEVONO ESSERE DOPPIONI;
 
-var listNum = [''];
-var randRequest = 0;
+var listNum = [];
+var number = 0;
+var score = 0;
+var gameOver = false;
 
-while (listNum.length < 16) {
+while (listNum.length < 5 && !gameOver) {
 
-  var randRequest = parseInt(prompt('Inserisci un numero da 1 a 100'));
-  if (!listNum.includes(randRequest)) {
-    listNum.push(randRequest);
+  var number = parseInt(prompt('Inserisci un numero da 1 a 100'));;
+
+  if (!listNum.includes(number)) {
+    listNum.push(number);
   }
-};
+
+  if (!list.includes(number)) {
+    score = score + 1;
+  } else {
+    gameOver = true;
+    alert('Hai perso');
+
+  };
+}
 console.log(listNum);
-console.log(randRequest);
+console.log(number);
+console.log(score);
